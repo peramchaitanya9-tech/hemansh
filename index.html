@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 1st Birthday Uppala Hemansh! 🎂🎈 | Special Birthday Album</title>
+  <meta name="description" content="Happy 1st Birthday to Uppala Hemansh! Born 17/9/2025. Explore the interactive celebratory album with family moments, photos, and wishes.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Dynamic Canvas Background for Floating Particles & Glows -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Interactive Floating Balloons Container -->
+  <div id="balloon-container" class="balloon-container" aria-hidden="true"></div>
+
+  <!-- Global Audio & Atmosphere Controls -->
+  <header class="top-nav">
+    <div class="nav-brand">
+      <span class="brand-badge"><i class="fa-solid fa-crown text-gold"></i> HEMANSH'S 1ST BIRTHDAY</span>
+    </div>
+    <div class="nav-actions">
+      <button id="btn-music-toggle" class="control-btn" title="Toggle Birthday Music">
+        <i class="fa-solid fa-music"></i>
+        <span class="sound-wave">
+          <span></span><span></span><span></span><span></span>
+        </span>
+        <span class="music-label">Music: ON</span>
+      </button>
+      <button id="btn-confetti-blast" class="control-btn btn-blast" title="Blast Confetti!">
+        <i class="fa-solid fa-wand-magic-sparkles text-gold"></i>
+        <span>Celebrate! 🎉</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container with Smooth Screen Switcher -->
+  <main class="app-viewport">
+
+    <!-- ================= PAGE 1: COVER PAGE ================= -->
+    <section id="cover-page" class="view-section active-view">
+      <div class="cover-content">
+        
+        <!-- Decorative Badge -->
+        <div class="special-badge animate-fade-down">
+          <span class="sparkle-icon">✨</span>
+          <span>ROYAL 1ST BIRTHDAY CELEBRATION</span>
+          <span class="sparkle-icon">✨</span>
+        </div>
+
+        <!-- Big Royal Emblem / Logo -->
+        <div class="emblem-wrapper animate-zoom-in" id="emblem-interactive">
+          <div class="emblem-halo"></div>
+          <div class="emblem-ring-outer"></div>
+          <div class="emblem-card">
+            <img src="assets/birthday_crest.jpg" alt="Uppala Hemansh 1st Birthday Royal Logo" class="emblem-image" id="crest-image">
+            <div class="emblem-shine"></div>
+          </div>
+          <div class="royal-ribbon">
+            <i class="fa-solid fa-star"></i> PRINCE HEMANSH <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+
+        <!-- Main Animated Title -->
+        <div class="hero-title-group animate-fade-up">
+          <h2 class="sub-greeting">WELCOME TO THE SPECIAL MOMENTS OF</h2>
+          <h1 class="main-title">
+            <span class="text-glow-happy">HAPPY BIRTHDAY</span>
+            <span class="text-glow-name">HEMANSH</span>
+          </h1>
+          <p class="hero-tagline">
+            Celebrating <strong class="highlight-gold">1 Glorious Year</strong> of boundless smiles, cute giggles & unconditional happiness!
+          </p>
+        </div>
+
+        <!-- Birthday Milestone Date Tag -->
+        <div class="date-chip animate-fade-up">
+          <span class="chip-item"><i class="fa-solid fa-calendar-day text-gold"></i> 17th September 2025</span>
+          <span class="chip-divider">•</span>
+          <span class="chip-item"><i class="fa-solid fa-cake-candles text-gold"></i> Turning 1 Year Old</span>
+        </div>
+
+        <!-- Action Next Button -->
+        <div class="cover-action animate-bounce-soft">
+          <button id="btn-goto-album" class="btn-enter-album">
+            <span class="btn-glow-ring"></span>
+            <span class="btn-content">
+              <i class="fa-solid fa-book-open-reader"></i>
+              <span class="btn-text-main">Open Memory Album</span>
+              <i class="fa-solid fa-arrow-right-long btn-arrow-icon"></i>
+            </span>
+          </button>
+          <p class="click-hint"><i class="fa-solid fa-hand-pointer"></i> Click Next to explore photos & details</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= PAGE 2: ALBUM & DETAILS PAGE ================= -->
+    <section id="album-page" class="view-section hidden-view">
+      <div class="album-container">
+
+        <!-- Page Header & Back Navigation -->
+        <div class="album-header">
+          <button id="btn-back-cover" class="btn-back">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Back to Cover</span>
+          </button>
+          <div class="album-title-box">
+            <h2 class="album-heading"><i class="fa-solid fa-heart text-pink"></i> Hemansh's Birthday Album & Profile <i class="fa-solid fa-heart text-pink"></i></h2>
+            <p class="album-subheading">Cherishing the golden 1st year milestones of baby Uppala Hemansh</p>
+          </div>
+          <button id="btn-trigger-balloons" class="btn-back btn-balloon-blast" title="Release more balloons">
+            <i class="fa-solid fa-circle-arrow-up text-gold"></i>
+            <span>Fly Balloons 🎈</span>
+          </button>
+        </div>
+
+        <!-- Two Columns Layout: Photos Showcase + Profile Details -->
+        <div class="album-grid">
+
+          <!-- Left Column: The 2 Precious Photos -->
+          <div class="photos-column">
+            <div class="section-card-header">
+              <div class="header-icon-circle"><i class="fa-solid fa-camera-retro"></i></div>
+              <div>
+                <h3 class="card-title">Precious Photo Gallery</h3>
+                <p class="card-subtitle">Two cherished memories capturing the cutest smiles</p>
+              </div>
+            </div>
+
+            <div class="photos-grid">
+              
+              <!-- PHOTO 1: Baby with Indian Flag -->
+              <div class="photo-card-wrapper" data-tilt>
+                <div class="photo-frame" id="photo-card-1">
+                  <div class="frame-tag frame-tag-orange">
+                    <i class="fa-solid fa-flag"></i> Little Patriot & Prince
+                  </div>
+                  <div class="image-container">
+                    <img src="assets/hemansh_flag.jpg" alt="Baby Uppala Hemansh wrapped in Indian Flag" class="gallery-photo" id="photo-img-1">
+                    <div class="photo-overlay">
+                      <button class="btn-zoom" data-img="assets/hemansh_flag.jpg" data-caption="Baby Uppala Hemansh with the Indian Flag - Radiating pure joy and sweetness!">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Click to Zoom
+                      </button>
+                    </div>
+                  </div>
+                  <div class="photo-caption">
+                    <h4 class="caption-title">🇮🇳 Pride & Pure Innocence</h4>
+                    <p class="caption-text">Wrapped in the tricolor with a radiant cute smile that lights up everyone's world!</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PHOTO 2: Baby Underwater with Father Uppala Gopi -->
+              <div class="photo-card-wrapper" data-tilt>
+                <div class="photo-frame" id="photo-card-2">
+                  <div class="frame-tag frame-tag-blue">
+                    <i class="fa-solid fa-water"></i> Water Fun with Appa
+                  </div>
+                  <div class="image-container">
+                    <img src="assets/hemansh_father.jpg" alt="Baby Uppala Hemansh swimming underwater with Father Uppala Gopi" class="gallery-photo" id="photo-img-2">
+                    <div class="photo-overlay">
+                      <button class="btn-zoom" data-img="assets/hemansh_father.jpg" data-caption="Baby Uppala Hemansh underwater swimming with Father Uppala Gopi - Pure joy and laughter!">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Click to Zoom
+                      </button>
+                    </div>
+                  </div>
+                  <div class="photo-caption">
+                    <h4 class="caption-title">🌊 Little Dolphin & Loving Appa</h4>
+                    <p class="caption-text">A priceless underwater moment of courage, adventure, and loving bond with Father Uppala Gopi.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Interactive Photo Reel Ribbon -->
+            <div class="reel-badge">
+              <i class="fa-solid fa-wand-magic-sparkles text-gold"></i>
+              <span>Click on any photo to view in high definition fullscreen!</span>
+              <i class="fa-solid fa-wand-magic-sparkles text-gold"></i>
+            </div>
+          </div>
+
+          <!-- Right Column: Personal & Family Details Card -->
+          <div class="details-column">
+            
+            <!-- Royal Details Card -->
+            <div class="profile-card">
+              <div class="profile-header-banner">
+                <div class="profile-crown"><i class="fa-solid fa-crown"></i></div>
+                <h3 class="profile-title">UPPALA HEMANSH</h3>
+                <span class="profile-subtitle">Birthday Boy & Family Star ⭐</span>
+              </div>
+
+              <div class="details-list">
+                
+                <!-- Detail Item 1: Name -->
+                <div class="detail-row highlight-row">
+                  <div class="detail-icon"><i class="fa-solid fa-id-card"></i></div>
+                  <div class="detail-info">
+                    <span class="detail-label">NAME</span>
+                    <strong class="detail-value text-gold-gradient">UPPALA HEMANSH</strong>
+                  </div>
+                  <span class="detail-badge"><i class="fa-solid fa-star"></i> VIP</span>
+                </div>
+
+                <!-- Detail Item 2: Date of Birth -->
+                <div class="detail-row">
+                  <div class="detail-icon icon-cyan"><i class="fa-solid fa-cake-candles"></i></div>
+                  <div class="detail-info">
+                    <span class="detail-label">DATE OF BIRTH</span>
+                    <strong class="detail-value">17 / 9 / 2025</strong>
+                  </div>
+                  <span class="detail-tag">Special Day 🎂</span>
+                </div>
+
+                <!-- Detail Item 3: Age -->
+                <div class="detail-row">
+                  <div class="detail-icon icon-pink"><i class="fa-solid fa-hourglass-half"></i></div>
+                  <div class="detail-info">
+                    <span class="detail-label">AGE</span>
+                    <strong class="detail-value">1 YEAR (365 Days of Joy)</strong>
+                  </div>
+                  <span class="detail-tag tag-pink">1st Milestone 🥇</span>
+                </div>
+
+                <!-- Detail Item 4: Father -->
+                <div class="detail-row">
+                  <div class="detail-icon icon-blue"><i class="fa-solid fa-person"></i></div>
+                  <div class="detail-info">
+                    <span class="detail-label">FATHER</span>
+                    <strong class="detail-value">UPPALA GOPI</strong>
+                  </div>
+                  <span class="detail-tag tag-blue">Super Dad 🦸‍♂️</span>
+                </div>
+
+                <!-- Detail Item 5: Mother -->
+                <div class="detail-row">
+                  <div class="detail-icon icon-purple"><i class="fa-solid fa-person-dress"></i></div>
+                  <div class="detail-info">
+                    <span class="detail-label">MOTHER</span>
+                    <strong class="detail-value">UPPALA MANEESHA</strong>
+                  </div>
+                  <span class="detail-tag tag-purple">Loving Mom 💖</span>
+                </div>
+
+              </div>
+
+              <!-- Sweet Birthday Blessing Quote -->
+              <div class="blessing-quote-card">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <p class="quote-text">
+                  "May your smile forever illuminate the lives around you. Wishing you a lifetime filled with immense health, wisdom, boundless love, and dreams come true! Happy 1st Birthday, darling Hemansh!"
+                </p>
+                <div class="quote-author">With all the love from Appa Gopi & Amma Maneesha ❤️</div>
+              </div>
+
+              <!-- Quick Milestone Badges -->
+              <div class="milestones-row">
+                <div class="milestone-chip">
+                  <span class="chip-emoji">🍼</span>
+                  <span class="chip-title">12 Months</span>
+                </div>
+                <div class="milestone-chip">
+                  <span class="chip-emoji">🏊‍♂️</span>
+                  <span class="chip-title">Water Explorer</span>
+                </div>
+                <div class="milestone-chip">
+                  <span class="chip-emoji">🥰</span>
+                  <span class="chip-title">100% Cuteness</span>
+                </div>
+                <div class="milestone-chip">
+                  <span class="chip-emoji">🎉</span>
+                  <span class="chip-title">Little Prince</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ================= SECTION 3: INTERACTIVE WISHES & BLESSINGS WALL ================= -->
+        <div class="wishes-section">
+          <div class="wishes-box-header">
+            <div class="header-icon-circle"><i class="fa-solid fa-gift"></i></div>
+            <div>
+              <h3 class="wishes-title">Send Birthday Blessings to Baby Hemansh</h3>
+              <p class="wishes-desc">Write a heartfelt message to shower Hemansh with love and golden confetti!</p>
+            </div>
+          </div>
+
+          <div class="wishes-container">
+            <!-- Wish Form -->
+            <form id="wish-form" class="wish-form">
+              <div class="form-inputs">
+                <div class="input-group">
+                  <label for="sender-name"><i class="fa-solid fa-user text-gold"></i> Your Name</label>
+                  <input type="text" id="sender-name" placeholder="e.g. Uncle, Aunt, Friend..." required>
+                </div>
+                <div class="input-group">
+                  <label for="sender-relation"><i class="fa-solid fa-heart text-pink"></i> Relationship / Blessing</label>
+                  <select id="sender-relation">
+                    <option value="Family & Relatives">👨‍👩‍👧 Family & Relatives</option>
+                    <option value="Well Wisher">🌟 Well Wisher</option>
+                    <option value="Friend">🎈 Friend</option>
+                    <option value="Grandparent">👵 Grandparent</option>
+                  </select>
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="wish-message"><i class="fa-solid fa-envelope-open-text text-gold"></i> Your Birthday Wish</label>
+                <textarea id="wish-message" rows="3" placeholder="Write your heartfelt blessing for Hemansh..." required></textarea>
+              </div>
+              <button type="submit" class="btn-send-wish">
+                <i class="fa-solid fa-paper-plane"></i> Send Blessing & Shower Confetti 💖
+              </button>
+            </form>
+
+            <!-- Wishes List Display -->
+            <div class="wishes-wall" id="wishes-wall">
+              
+              <!-- Sample Pre-loaded Wishes -->
+              <div class="wish-card featured-wish">
+                <div class="wish-header">
+                  <span class="wish-sender">👨‍👦 Uppala Gopi (Father)</span>
+                  <span class="wish-badge">Appa's Blessing</span>
+                </div>
+                <p class="wish-body">"To my dearest little champ Hemansh, watching you smile and play brings the purest happiness to my life. May you grow strong, happy, and conquer every height! Happy 1st Birthday my son! 💖🎂"</p>
+                <span class="wish-time">17 Sept 2026</span>
+              </div>
+
+              <div class="wish-card featured-wish">
+                <div class="wish-header">
+                  <span class="wish-sender">👩‍👦 Uppala Maneesha (Mother)</span>
+                  <span class="wish-badge">Amma's Love</span>
+                </div>
+                <p class="wish-body">"Happy 1st Birthday my little prince Hemansh! You have brought infinite light and joy into our home. May God bless you with good health, lots of laughter, and wonderful blessings forever! ✨❤️"</p>
+                <span class="wish-time">17 Sept 2026</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="album-footer">
+          <p class="footer-text">
+            👑 Made with infinite love for <strong>UPPALA HEMANSH's 1st Birthday</strong> | 17th September 2025 - 2026
+          </p>
+          <div class="footer-buttons">
+            <button class="btn-footer-action" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+              <i class="fa-solid fa-arrow-up"></i> Top of Page
+            </button>
+            <button class="btn-footer-action" id="btn-footer-back">
+              <i class="fa-solid fa-house"></i> Return to Cover
+            </button>
+          </div>
+        </footer>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= LIGHTBOX MODAL FOR HIGH-RES PHOTOS ================= -->
+  <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" title="Close Lightbox">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="lightbox-image-box">
+        <img src="" alt="Enlarged Photo" id="lightbox-img" class="lightbox-img">
+      </div>
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
